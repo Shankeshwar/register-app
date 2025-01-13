@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pipeline {
     agent { label 'Jenkins-Agent' }
     tools {
@@ -13,7 +14,7 @@ pipeline {
 
         stage("Checkout from SCM"){
                 steps {
-                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/Ashfaque-9x/register-app'
+                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/Shankeshwar/register-app.git'
                 }
         }
 
@@ -31,4 +32,3 @@ pipeline {
        }
      }
 }
-
