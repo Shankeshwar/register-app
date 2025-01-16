@@ -13,7 +13,7 @@ pipeline {
 
         stage("Checkout from SCM"){
                 steps {
-                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/shankesh/register-app'
+                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/Shankeshwar/register-app.git'
                 }
         }
 
@@ -29,16 +29,15 @@ pipeline {
                  sh "mvn test"
            }
        }
-	   stage("SonarQube Analysis"){
+
+       stage("SonarQube Analysis"){
            steps {
-                  script {
+                   script {
                         withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') {
                         sh "mvn sonar:sonar"
                         }
                    }
            }
-       }
-	   
- }
-	
-}
+        }
+	}
+}	
